@@ -98,6 +98,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Ekle"/>
+                                <connections>
+                                    <action selector="addButton:" destination="lQy-eQ-6ad" eventType="touchUpInside" id="uOM-5L-JiB"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cHy-de-dfg">
                                 <rect key="frame" x="20" y="128" width="353" height="34"/>
@@ -122,6 +125,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jMU-KF-rA4"/>
+                    <connections>
+                        <outlet property="dersAddTextField" destination="cHy-de-dfg" id="iXM-cO-7Tb"/>
+                        <outlet property="finalAddTextField" destination="9IO-So-ys9" id="IS2-dh-C55"/>
+                        <outlet property="vizeAddTextField" destination="c6k-6z-a6M" id="86c-kI-GOd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFi-Pa-FxC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -362,9 +370,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fy-Jg-skm">
-                                <rect key="frame" x="159" y="580" width="75" height="35"/>
+                                <rect key="frame" x="146.66666666666666" y="580" width="100" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="TsY-Yn-TGF"/>
+                                    <constraint firstAttribute="width" constant="100" id="TsY-Yn-TGF"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Guncelle"/>
@@ -708,9 +716,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rid-oc-FWh">
-                                <rect key="frame" x="159" y="580" width="75" height="35"/>
+                                <rect key="frame" x="146.66666666666666" y="580" width="100" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="6G4-ql-NLl"/>
+                                    <constraint firstAttribute="width" constant="100" id="6G4-ql-NLl"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Guncelle"/>
@@ -782,6 +790,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Ekle"/>
+                                <connections>
+                                    <action selector="addButton:" destination="IPF-dX-UV6" eventType="touchUpInside" id="jCY-qM-FeF"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QRk-22-4qg">
                                 <rect key="frame" x="20" y="128" width="353" height="34"/>
@@ -812,6 +823,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xjw-iV-Snu"/>
+                    <connections>
+                        <outlet property="dersAddTextField" destination="QRk-22-4qg" id="e0S-3w-Tb9"/>
+                        <outlet property="finalAddTextField" destination="beH-uP-2qY" id="Qey-uZ-xbj"/>
+                        <outlet property="vizeAddTextField" destination="kAB-DR-AOU" id="dfB-cS-NWx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVY-oh-ebb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -910,6 +926,9 @@
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButton:" destination="T04-Gp-uYM" eventType="touchUpInside" id="RxZ-6K-P2r"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ortalama :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPX-fR-CJ6">
                                 <rect key="frame" x="219" y="275" width="79" height="21"/>
@@ -944,10 +963,17 @@
                     <navigationItem key="navigationItem" id="RaX-W9-NHc">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="tNN-38-a9v">
                             <connections>
-                                <segue destination="eBg-eP-kNd" kind="show" id="kPa-HW-KaP"/>
+                                <segue destination="eBg-eP-kNd" kind="show" identifier="AlamofireDetailToUpdate" id="kPa-HW-KaP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dersAdiDetailLabel" destination="Lyq-qd-8jw" id="Ocr-0r-ecG"/>
+                        <outlet property="finalDetailLabel" destination="D8x-Zi-ef5" id="0Rj-71-seY"/>
+                        <outlet property="ortNotDetailLabel" destination="yxw-oc-0WQ" id="AU1-bn-14O"/>
+                        <outlet property="ortStringDetailLabel" destination="cPX-fR-CJ6" id="EAX-os-C9d"/>
+                        <outlet property="vizeDetailLabel" destination="Y1l-xd-1Vw" id="URy-K3-sF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZ2-Zh-SKy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -961,7 +987,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vize Notunuz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef3-3M-lZE">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vize Notunuz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef3-3M-lZE">
                                 <rect key="frame" x="20" y="232" width="353" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="353" id="fCH-fI-iWD"/>
@@ -969,7 +995,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Final Notunuz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-H2-Hv6">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Final Notunuz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNc-H2-Hv6">
                                 <rect key="frame" x="20" y="296" width="353" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="353" id="QoN-uK-vU0"/>
@@ -977,15 +1003,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-Tv-RTe">
-                                <rect key="frame" x="159" y="580" width="75" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sF2-Tv-RTe">
+                                <rect key="frame" x="146.66666666666666" y="600" width="100" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="eu0-7F-Nlv"/>
+                                    <constraint firstAttribute="width" constant="100" id="eu0-7F-Nlv"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Guncelle"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="eBg-eP-kNd" eventType="touchUpInside" id="zi4-NA-hoD"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-iN-n8V">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tr-iN-n8V">
                                 <rect key="frame" x="20" y="128" width="353" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="353" id="3Yc-i1-Jwq"/>
@@ -998,19 +1027,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ef3-3M-lZE" firstAttribute="centerX" secondItem="aV9-ct-rMD" secondAttribute="centerX" id="4yl-dQ-a7M"/>
-                            <constraint firstItem="3Tr-iN-n8V" firstAttribute="top" secondItem="eJy-c0-VSW" secondAttribute="top" constant="25" id="5XS-Qb-YQF"/>
                             <constraint firstItem="sF2-Tv-RTe" firstAttribute="centerX" secondItem="aV9-ct-rMD" secondAttribute="centerX" id="6nA-IF-MOn"/>
                             <constraint firstItem="Ef3-3M-lZE" firstAttribute="top" secondItem="3Tr-iN-n8V" secondAttribute="bottom" constant="70" id="9Up-w9-mLY"/>
-                            <constraint firstItem="sF2-Tv-RTe" firstAttribute="top" secondItem="CNc-H2-Hv6" secondAttribute="bottom" constant="250" id="A83-SS-VaM"/>
                             <constraint firstItem="CNc-H2-Hv6" firstAttribute="top" secondItem="Ef3-3M-lZE" secondAttribute="bottom" constant="30" id="Clo-ee-Kaw"/>
-                            <constraint firstItem="eJy-c0-VSW" firstAttribute="bottom" secondItem="sF2-Tv-RTe" secondAttribute="bottom" constant="80" id="DXB-1B-RbV"/>
+                            <constraint firstItem="sF2-Tv-RTe" firstAttribute="top" secondItem="CNc-H2-Hv6" secondAttribute="bottom" constant="270" id="Gwo-D4-JTt"/>
                             <constraint firstItem="CNc-H2-Hv6" firstAttribute="centerX" secondItem="aV9-ct-rMD" secondAttribute="centerX" id="POw-Qh-ZJI"/>
                             <constraint firstItem="3Tr-iN-n8V" firstAttribute="centerX" secondItem="aV9-ct-rMD" secondAttribute="centerX" id="YsJ-oq-G4i"/>
                             <constraint firstItem="3Tr-iN-n8V" firstAttribute="centerX" secondItem="aV9-ct-rMD" secondAttribute="centerX" id="ZsY-ej-EnU"/>
-                            <constraint firstItem="sF2-Tv-RTe" firstAttribute="top" secondItem="CNc-H2-Hv6" secondAttribute="bottom" constant="8" symbolic="YES" id="ked-Gr-LL8"/>
+                            <constraint firstItem="3Tr-iN-n8V" firstAttribute="top" secondItem="eJy-c0-VSW" secondAttribute="top" constant="25" id="iML-YT-jnx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ouq-ET-DRh"/>
+                    <connections>
+                        <outlet property="dersAdiTextField" destination="3Tr-iN-n8V" id="mb2-m5-rq9"/>
+                        <outlet property="finalTextField" destination="CNc-H2-Hv6" id="gwC-ra-ZdG"/>
+                        <outlet property="vizeTextField" destination="Ef3-3M-lZE" id="Fbb-Cc-pAs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBU-fx-Xhm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1076,6 +1108,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="DyI-R7-6mv" secondAttribute="trailing" constant="10" id="op4-Bi-fDc"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dersAdiCellLabel" destination="I7W-S8-I01" id="0CG-89-fjy"/>
+                                            <outlet property="finalCellLabel" destination="DyI-R7-6mv" id="c4s-Am-gIg"/>
+                                            <outlet property="vizeCellLabel" destination="1Lk-nX-xgJ" id="WRt-7o-hHb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1100,7 +1137,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="T04-Gp-uYM" kind="show" id="2bP-AG-WPQ"/>
+                        <outlet property="searchBar" destination="gKX-GC-vd6" id="Q1W-Gw-nVD"/>
+                        <outlet property="tableView" destination="n9n-fW-Gcg" id="VGK-qL-6HN"/>
+                        <segue destination="T04-Gp-uYM" kind="show" identifier="toAlamofireDetail" id="2bP-AG-WPQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkO-5z-CQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

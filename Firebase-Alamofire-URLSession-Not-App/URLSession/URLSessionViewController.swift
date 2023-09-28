@@ -8,17 +8,16 @@
 import UIKit
 
 class URLSessionViewController: UIViewController {
-
+    
     var notList = [Notlar]()
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
         
-        searchBar.delegate = self
     }
     override func viewWillAppear(_ animated: Bool) {
         getAllNot()
@@ -34,7 +33,7 @@ class URLSessionViewController: UIViewController {
     func getAllNot(){
         let url = URL(string: "http://kasimadalan.pe.hu/notlar/tum_notlar.php")!
         
-        URLSession.shared.dataTask(with: url) { 
+        URLSession.shared.dataTask(with: url) {
             data,response,error in
             if error != nil || data == nil {
                 print("Hata")
@@ -59,15 +58,7 @@ class URLSessionViewController: UIViewController {
         }.resume()
     }
     
-    func makeSearch(searchText: String){
-        
-    }
-
-   
-
 }
-
-
 extension URLSessionViewController : UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -90,9 +81,3 @@ extension URLSessionViewController : UITableViewDelegate, UITableViewDataSource{
     }
 }
 
-extension URLSessionViewController : UISearchBarDelegate{
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Arama Yapılıyormu :\(searchText)")
-        makeSearch(searchText: searchText)
-    }
-}
