@@ -143,15 +143,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="qMf-YE-faZ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="24g-Dd-UsQ" id="09O-U4-uus"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tQ5-Tf-Vgd">
-                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FirebaseCell" id="Z83-Lk-EKB" customClass="FirebaseTableViewCell" customModule="Firebase_Alamofire_URLSession_Not_App" customModuleProvider="target">
@@ -195,6 +188,11 @@
                                                 <constraint firstItem="kne-kh-kJo" firstAttribute="centerY" secondItem="rZV-WQ-BZL" secondAttribute="centerY" id="zjg-qj-NJ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dersAdiCellLabel" destination="kne-kh-kJo" id="UyI-Wn-3x9"/>
+                                            <outlet property="finalCellLabel" destination="C5d-nD-gOh" id="g3c-qW-Z61"/>
+                                            <outlet property="vizeCellLabel" destination="Mut-JT-XnN" id="LhP-x3-Um4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -202,13 +200,10 @@
                         <viewLayoutGuide key="safeArea" id="JcH-nd-Wrx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tQ5-Tf-Vgd" firstAttribute="top" secondItem="qMf-YE-faZ" secondAttribute="bottom" id="HOc-Pf-amc"/>
+                            <constraint firstItem="tQ5-Tf-Vgd" firstAttribute="top" secondItem="JcH-nd-Wrx" secondAttribute="top" id="4kY-o8-HtC"/>
                             <constraint firstItem="JcH-nd-Wrx" firstAttribute="bottom" secondItem="tQ5-Tf-Vgd" secondAttribute="bottom" id="Koe-iq-tda"/>
-                            <constraint firstItem="qMf-YE-faZ" firstAttribute="leading" secondItem="JcH-nd-Wrx" secondAttribute="leading" id="RRz-ep-N8P"/>
                             <constraint firstItem="JcH-nd-Wrx" firstAttribute="trailing" secondItem="tQ5-Tf-Vgd" secondAttribute="trailing" id="n0i-J9-ah9"/>
                             <constraint firstItem="tQ5-Tf-Vgd" firstAttribute="leading" secondItem="JcH-nd-Wrx" secondAttribute="leading" id="nLG-MS-b2F"/>
-                            <constraint firstItem="qMf-YE-faZ" firstAttribute="top" secondItem="JcH-nd-Wrx" secondAttribute="top" id="pFB-ZO-jHg"/>
-                            <constraint firstItem="qMf-YE-faZ" firstAttribute="trailing" secondItem="JcH-nd-Wrx" secondAttribute="trailing" id="t7S-zZ-4Pk"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LKd-HF-GB8">
@@ -219,7 +214,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="wZq-qn-Dyz" kind="show" id="oEy-dl-mFh"/>
+                        <outlet property="tableView" destination="tQ5-Tf-Vgd" id="MnH-in-1OL"/>
+                        <segue destination="wZq-qn-Dyz" kind="show" identifier="FirebaseToDetail" id="oEy-dl-mFh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKt-XC-ljO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -307,6 +303,9 @@
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteButton:" destination="wZq-qn-Dyz" eventType="touchUpInside" id="9bL-EK-YEz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aOO-62-cSO"/>
@@ -336,10 +335,17 @@
                     <navigationItem key="navigationItem" id="Gdy-eN-0qa">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="0zM-Td-Zsr">
                             <connections>
-                                <segue destination="IIB-Jc-pLM" kind="show" id="K1Q-Gn-u3f"/>
+                                <segue destination="IIB-Jc-pLM" kind="show" identifier="FirebaseDetailToUpdate" id="K1Q-Gn-u3f"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dersAdiDetailLabel" destination="EyU-5o-KoC" id="JzB-r7-J5U"/>
+                        <outlet property="finalDetailLabel" destination="kRI-gi-TnZ" id="WE3-PN-k6R"/>
+                        <outlet property="ortNotDetailLabel" destination="Gnf-QK-PTs" id="66t-Mu-DTu"/>
+                        <outlet property="ortStringDetailLabel" destination="PgH-GZ-ScW" id="IkK-zv-Qrp"/>
+                        <outlet property="vizeDetailLabel" destination="ku5-W7-Ta9" id="6mv-X7-i0B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EPo-1K-XX5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,6 +382,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Guncelle"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="IIB-Jc-pLM" eventType="touchUpInside" id="ZTB-Sq-q6m"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wa-KL-xEf">
                                 <rect key="frame" x="20" y="128" width="353" height="34"/>
@@ -400,6 +409,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dyq-Jx-aGp"/>
+                    <connections>
+                        <outlet property="dersAdiTextField" destination="6wa-KL-xEf" id="6ip-LV-P4a"/>
+                        <outlet property="finalTextField" destination="6gf-oo-VJs" id="7Wh-5D-w7U"/>
+                        <outlet property="vizeTextField" destination="Rga-ah-X5j" id="p2L-Q4-ZSu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fg7-7T-uK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -436,6 +450,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Ekle"/>
+                                <connections>
+                                    <action selector="addButton:" destination="mkp-lq-X73" eventType="touchUpInside" id="kvv-sr-ugt"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ders Adı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VkQ-C7-IPk">
                                 <rect key="frame" x="20" y="128" width="353" height="34"/>
@@ -460,6 +477,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3tr-6G-jhn"/>
+                    <connections>
+                        <outlet property="dersAddTextField" destination="VkQ-C7-IPk" id="ggy-NR-b39"/>
+                        <outlet property="finalAddTextField" destination="wSX-qc-AMc" id="owe-P9-Jbz"/>
+                        <outlet property="vizeAddTextField" destination="QII-26-IBg" id="6jt-4Q-zvL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49o-Gp-QRJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -473,15 +495,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WtT-WY-6U8">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ehR-D7-Urf" id="pfI-f7-lyj"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="str-L8-7MV">
-                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="URLSessionCell" id="olZ-G1-nK7" customClass="URLSessionTableViewCell" customModule="Firebase_Alamofire_URLSession_Not_App" customModuleProvider="target">
@@ -537,10 +552,7 @@
                         <viewLayoutGuide key="safeArea" id="18Y-T1-z7c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WtT-WY-6U8" firstAttribute="leading" secondItem="18Y-T1-z7c" secondAttribute="leading" id="3ny-tZ-fKX"/>
-                            <constraint firstItem="WtT-WY-6U8" firstAttribute="trailing" secondItem="18Y-T1-z7c" secondAttribute="trailing" id="Ck5-co-Q9o"/>
-                            <constraint firstItem="WtT-WY-6U8" firstAttribute="top" secondItem="18Y-T1-z7c" secondAttribute="top" id="Hrh-G6-d7g"/>
-                            <constraint firstItem="str-L8-7MV" firstAttribute="top" secondItem="WtT-WY-6U8" secondAttribute="bottom" id="Mie-W8-mB5"/>
+                            <constraint firstItem="str-L8-7MV" firstAttribute="top" secondItem="18Y-T1-z7c" secondAttribute="top" id="LMR-i9-tO0"/>
                             <constraint firstItem="18Y-T1-z7c" firstAttribute="trailing" secondItem="str-L8-7MV" secondAttribute="trailing" id="Ydv-A4-6sG"/>
                             <constraint firstItem="str-L8-7MV" firstAttribute="leading" secondItem="18Y-T1-z7c" secondAttribute="leading" id="rXg-FS-AU8"/>
                             <constraint firstItem="18Y-T1-z7c" firstAttribute="bottom" secondItem="str-L8-7MV" secondAttribute="bottom" id="rcI-7b-NPq"/>
@@ -554,7 +566,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="WtT-WY-6U8" id="ZVC-39-ulB"/>
                         <outlet property="tableView" destination="str-L8-7MV" id="gyQ-1l-9cf"/>
                         <segue destination="Nm7-M6-xwt" kind="show" identifier="toURLSessionDetail" id="QPM-5X-vPf"/>
                     </connections>
@@ -1056,15 +1067,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gKX-GC-vd6">
-                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="hqg-EM-baz" id="AZx-al-t72"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="n9n-fW-Gcg">
-                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlamofireCell" id="udb-Zd-ZFn" customClass="AlamofireTableViewCell" customModule="Firebase_Alamofire_URLSession_Not_App" customModuleProvider="target">
@@ -1083,7 +1087,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyI-R7-6mv">
                                                     <rect key="frame" x="333" y="11.333333333333336" width="50" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="Uw6-Bf-SVT"/>
+                                                        <constraint firstAttribute="width" constant="50" id="eob-HR-qhw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1092,7 +1096,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-nX-xgJ">
                                                     <rect key="frame" x="253" y="11.333333333333336" width="50" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="IRp-pb-VS1"/>
+                                                        <constraint firstAttribute="width" constant="50" id="LJ3-9c-6Pd"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -1100,12 +1104,12 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="DyI-R7-6mv" firstAttribute="leading" secondItem="1Lk-nX-xgJ" secondAttribute="trailing" constant="30" id="148-B0-nPb"/>
-                                                <constraint firstItem="I7W-S8-I01" firstAttribute="centerY" secondItem="mYQ-jz-Dar" secondAttribute="centerY" id="8fX-5c-7RR"/>
-                                                <constraint firstItem="I7W-S8-I01" firstAttribute="leading" secondItem="mYQ-jz-Dar" secondAttribute="leadingMargin" constant="10" id="Ywl-ZU-a7K"/>
-                                                <constraint firstItem="DyI-R7-6mv" firstAttribute="centerY" secondItem="mYQ-jz-Dar" secondAttribute="centerY" id="ioV-OM-kpp"/>
-                                                <constraint firstItem="1Lk-nX-xgJ" firstAttribute="centerY" secondItem="mYQ-jz-Dar" secondAttribute="centerY" id="nhf-WV-NB5"/>
-                                                <constraint firstAttribute="trailing" secondItem="DyI-R7-6mv" secondAttribute="trailing" constant="10" id="op4-Bi-fDc"/>
+                                                <constraint firstItem="DyI-R7-6mv" firstAttribute="leading" secondItem="1Lk-nX-xgJ" secondAttribute="trailing" constant="30" id="EXj-Jh-giX"/>
+                                                <constraint firstItem="I7W-S8-I01" firstAttribute="baseline" secondItem="1Lk-nX-xgJ" secondAttribute="baseline" id="GkW-wC-kEr"/>
+                                                <constraint firstItem="I7W-S8-I01" firstAttribute="centerY" secondItem="mYQ-jz-Dar" secondAttribute="centerY" id="bl9-u0-2lY"/>
+                                                <constraint firstItem="I7W-S8-I01" firstAttribute="leading" secondItem="mYQ-jz-Dar" secondAttribute="leadingMargin" constant="10" id="fPJ-an-GWD"/>
+                                                <constraint firstItem="1Lk-nX-xgJ" firstAttribute="baseline" secondItem="DyI-R7-6mv" secondAttribute="baseline" id="m2R-TM-nyl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DyI-R7-6mv" secondAttribute="trailing" constant="-10" id="o45-gw-dpB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1120,13 +1124,10 @@
                         <viewLayoutGuide key="safeArea" id="r68-g0-SyC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="leading" secondItem="r68-g0-SyC" secondAttribute="leading" id="7td-Ro-vI2"/>
-                            <constraint firstItem="r68-g0-SyC" firstAttribute="bottom" secondItem="n9n-fW-Gcg" secondAttribute="bottom" id="Dr4-tj-QlD"/>
-                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="top" secondItem="gKX-GC-vd6" secondAttribute="bottom" id="KkJ-de-3mc"/>
-                            <constraint firstItem="r68-g0-SyC" firstAttribute="trailing" secondItem="n9n-fW-Gcg" secondAttribute="trailing" id="YDY-7k-z7V"/>
-                            <constraint firstItem="gKX-GC-vd6" firstAttribute="top" secondItem="r68-g0-SyC" secondAttribute="top" id="iFy-Ii-uKA"/>
-                            <constraint firstItem="r68-g0-SyC" firstAttribute="trailing" secondItem="gKX-GC-vd6" secondAttribute="trailing" id="kQ7-dt-fzI"/>
-                            <constraint firstItem="gKX-GC-vd6" firstAttribute="leading" secondItem="FXQ-8A-rGy" secondAttribute="leading" id="vn3-9s-wtt"/>
+                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="bottom" secondItem="r68-g0-SyC" secondAttribute="bottom" id="4Ab-Zv-v4Y"/>
+                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="top" secondItem="r68-g0-SyC" secondAttribute="top" id="UZY-LT-UL7"/>
+                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="trailing" secondItem="r68-g0-SyC" secondAttribute="trailing" id="cnl-vz-Wah"/>
+                            <constraint firstItem="n9n-fW-Gcg" firstAttribute="leading" secondItem="r68-g0-SyC" secondAttribute="leading" id="dI3-vw-q0z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bVX-JO-LGW">
@@ -1137,7 +1138,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="gKX-GC-vd6" id="Q1W-Gw-nVD"/>
                         <outlet property="tableView" destination="n9n-fW-Gcg" id="VGK-qL-6HN"/>
                         <segue destination="T04-Gp-uYM" kind="show" identifier="toAlamofireDetail" id="2bP-AG-WPQ"/>
                     </connections>

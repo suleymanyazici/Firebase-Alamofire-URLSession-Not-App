@@ -35,6 +35,7 @@
 		075C938A2AC40D6F009ECFFF /* URLSessionUpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C93892AC40D6F009ECFFF /* URLSessionUpdateViewController.swift */; };
 		075C938C2AC41200009ECFFF /* Notlar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C938B2AC41200009ECFFF /* Notlar.swift */; };
 		075C938E2AC41210009ECFFF /* NotlarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075C938D2AC41210009ECFFF /* NotlarResponse.swift */; };
+		075C93902AC5C817009ECFFF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075C938F2AC5C817009ECFFF /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		075C93892AC40D6F009ECFFF /* URLSessionUpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUpdateViewController.swift; sourceTree = "<group>"; };
 		075C938B2AC41200009ECFFF /* Notlar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notlar.swift; sourceTree = "<group>"; };
 		075C938D2AC41210009ECFFF /* NotlarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotlarResponse.swift; sourceTree = "<group>"; };
+		075C938F2AC5C817009ECFFF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				075C933B2AC3FD92009ECFFF /* Assets.xcassets */,
 				075C933D2AC3FD92009ECFFF /* LaunchScreen.storyboard */,
 				075C93402AC3FD92009ECFFF /* Info.plist */,
+				075C938F2AC5C817009ECFFF /* GoogleService-Info.plist */,
 				075C938B2AC41200009ECFFF /* Notlar.swift */,
 				075C938D2AC41210009ECFFF /* NotlarResponse.swift */,
 			);
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				075C933F2AC3FD92009ECFFF /* LaunchScreen.storyboard in Resources */,
+				075C93902AC5C817009ECFFF /* GoogleService-Info.plist in Resources */,
 				075C933C2AC3FD92009ECFFF /* Assets.xcassets in Resources */,
 				075C933A2AC3FD8F009ECFFF /* Main.storyboard in Resources */,
 			);

@@ -8,6 +8,10 @@
 import UIKit
 
 class FirebaseTableViewCell: UITableViewCell {
+  
+    @IBOutlet weak var finalCellLabel: UILabel!
+    @IBOutlet weak var vizeCellLabel: UILabel!
+    @IBOutlet weak var dersAdiCellLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
