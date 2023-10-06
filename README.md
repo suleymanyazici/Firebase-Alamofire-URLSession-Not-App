@@ -1,6 +1,6 @@
 # Firebase-Alamofire-URLSession-Not-App
 
-# iOS  Alıştırmalar 💻
+
 
 - İnternet tabanlı işlemler üzerine çalıştığım bu uygulama içerisinde Firebase, Alamofire ve URLSession yapılarını kullanmaya çalıştım. Başlangıç ekranında yapılan seçim sonrasında işlemlerin tamamı seçilen yönteme göre listelenmektedir ve gerekli istekler buna göre yapılmaktadır.
 
